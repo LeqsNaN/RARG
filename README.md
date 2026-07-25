@@ -16,9 +16,9 @@ Together, the three levels decide where interaction begins, which documents `rg`
 
 **Results.** On BrowseComp-Plus (100 queries), RARG++ reaches 84% accuracy vs. 78% for RISE/DCI (GPT-5.4-mini) with far fewer tool calls; on 4 subsets used by DCI in BRIGHT, RARG+ achieves 53.36 avg nDCG@10, surpassing DCI, RISE, and NeMo.
 
-<p align="center">
-  <img src="res.png" alt="BC+ 100 queries results" width="600">
-</p>
+\<p align="center">  
+\<img src="res.png" alt="BC+ 100 queries results" width="600">  
+\</p>
 
 ## About this repo
 
@@ -46,7 +46,7 @@ RARG is a Python reimplementation of the [pi-mono](https://github.com/earendil-w
 - `data/bcplus_qa_sample100.jsonl`
 - `data/bright/queries/`
 - `data/bright/docs/`
-- `data/indices/bc_plus_1m/paths.json`
+- `data/indices/bc_plus_1m/paths.json` — a JSON array of file-path strings listing the FineWeb-Edu documents sampled to build the 1M-scale corpus (i.e., which FineWeb-Edu data was included).
 
 ### 4. BC+ data construction / evaluation scripts
 
