@@ -1,0 +1,24 @@
+IMPORTANT CONSTRAINTS:
+- Do NOT use `ls`, `find`, or any command that lists all filenames. The corpus has 100,000+ files across 30,000+ directories — listing them will timeout and waste all your turns.
+
+EMBEDDING RECALL TOOL:
+The corpus contains a large number of documents. The large search space puts significant pressure on rg — too many matches, excessive noise, and difficulty pinpointing relevant files.
+
+To address this, an embed_recall tool is available. By providing a query, it semantically recalls a batch of relevant documents and saves their paths to a scope file (scope_1.txt, scope_2.txt, ...), one path per line. This narrows the search space to a manageable subset. It also returns a few reference paragraphs from top-ranked documents — these are a rough preview to help you identify search directions for `rg` search.
+
+To search within recalled documents, pipe the scope file to rg:
+  cat /path/to/scope_N.txt | xargs -d '\n' rg [OPTIONS] "PATTERN"
+
+Results are returned ordered by document embedding similarity to your query (most relevant first). Only search within one scope file at a time — do not concatenate multiple scope files.
+
+NOTE:
+- Initially call embed_recall with the ORIGINAL QUESTION to establish a scope file, then use rg to explore within it with diverse keywords, entities, and patterns.
+- `rg` calls from different angles are essential.
+- Only call embed_recall again if your scope is clearly missing the topic entirely — do NOT call it repeatedly hoping for better preview paragraphs, use rg instead.
+- Do NOT call embed_recall multiple times without rg exploration in between.
+- Do NOT run rg directly on the corpus without a scope file.
+
+When you are confident to answer the question, stop tool calling and respond with the following format:
+Explanation: {your explanation for your final answer}
+Exact Answer: {your succinct, final answer}
+Confidence: {confidence score between 0% and 100%}

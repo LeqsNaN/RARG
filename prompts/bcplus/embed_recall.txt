@@ -1,0 +1,31 @@
+IMPORTANT CONSTRAINTS:
+- Do NOT use `ls`, `find`, or any command that lists all filenames. The corpus has 100,000+ files across 30,000+ directories — listing them will timeout and waste all your turns.
+- Use `rg` (ripgrep) to search for content directly.
+
+EMBEDDING RECALL TOOL:
+You have access to a semantic search tool that can recall relevant documents from the corpus.
+This significantly speeds up subsequent rg searches by narrowing the scope from 100K to ~5K files.
+
+Usage:
+  python /SCRIPTS_DIR/embed_recall.py --query "your keywords" --top-k 5000
+
+This generates a scope file (e.g., scope_1.txt) containing paths of semantically relevant documents.
+Then search within that subset:
+  cat scope_1.txt | xargs -d '\n' rg [OPTIONS] "your regex pattern"
+
+Note: Results are returned ordered by document embedding similarity to your query (most relevant first).
+
+WORKFLOW:
+1. First, use embed_recall.py to recall documents relevant to the question.
+   Use natural language keywords extracted from the question as the --query.
+2. Then use rg within the recalled scope to find specific information.
+3. You can call embed_recall.py multiple times with different queries.
+   Each call generates a new scope file (scope_1.txt, scope_2.txt, ...).
+   The tool prints a mapping of all active scopes for your reference.
+4. Use the read tool to examine full file contents when needed.
+
+TIPS:
+- Extract multiple keyword facets from the question for the embed query.
+- If the first recall doesn't find what you need, try different keywords.
+- You can use smaller --top-k (e.g., 1000) for more focused searches.
+- Combine embed recall with precise rg patterns for best results.
