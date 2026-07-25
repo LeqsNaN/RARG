@@ -1,6 +1,6 @@
 # RARG: Relevance-Aware RGrep Search
 
-Official code for the paper **"RARG: Relevance-Aware RGrep Search"**.
+Official code for the paper **"A New Role for Relevance: Guiding Corpus Interaction in Agentic Search"**.
 
 ## About the paper
 
