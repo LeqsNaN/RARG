@@ -396,3 +396,18 @@ The following large artifacts are still intentionally omitted from this repo cop
 
 - Core components: agent code, prompts, benchmark data, corpus-preparation and  
   evaluation scripts, and index-building utilities (see the sections above).
+
+## Demo outputs (`outputs_for_demonstration`)
+
+`outputs_for_demonstration/bcplus_eval/` contains example agent run outputs on
+BrowseComp-Plus (100-query sample) for a few model/recipe combinations.
+
+To keep the repo size manageable, redundant content was stripped from these
+outputs. For each sample we keep only:
+
+- **all conversation turns** — the full per-turn content as the agent executed
+  (compaction views are *not* shown), and
+- **the final answer** produced by the agent.
+
+We also keep the **scope file(s)**. The `gpt-5.4-nano` runs produced many of
+them, so for those we kept only a single `scope_1.txt` to save space.
