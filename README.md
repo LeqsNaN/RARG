@@ -14,6 +14,10 @@ Official code for the paper **"A New Role for Relevance: Guiding Corpus Interact
 
 Together, the three levels decide where interaction begins, which documents `rg` visits first, and which local matches reach the model — helping the agent reach evidence earlier and converge with fewer wasted steps, while keeping DCI's fine-grained interaction.
 
+<p align="center">
+<img src="cost.png" alt="BC+ cost" width="600">
+</p>
+
 **Results.** On BrowseComp-Plus (100 queries), RARG++ reaches 84% accuracy vs. 78% for RISE/DCI (GPT-5.4-mini) with far fewer tool calls; on 4 subsets used by DCI in BRIGHT, RARG+ achieves 53.36 avg nDCG@10, surpassing DCI, RISE, and NeMo.
 
 <p align="center">
