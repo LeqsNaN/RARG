@@ -3,7 +3,7 @@
 Official code for the paper **"A New Role for Relevance: Guiding Corpus Interaction in Agentic Search"**.
 
 <p align="center">
-<img src="cost.png" alt="Accuracy/nDCG@10 versus interaction cost" width="600">
+<img src="cost.png" alt="Accuracy/nDCG@10 versus interaction cost">
 </p>
 <p align="center"><b>Accuracy/nDCG@10 versus interaction cost (average tool calls) on BrowseComp-Plus and BRIGHT. By turning relevance into an execution prior over rg exploration, RARG advances the accuracy--efficiency frontier over retrieval-based and direct-interaction agents.</b></p>
 
