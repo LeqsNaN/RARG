@@ -29,12 +29,12 @@ Together, the three levels decide where interaction begins, which documents `rg`
 <p align="center">
 <img src="res.png" alt="BC+ 100 queries results" width="600">
 </p>
-<p align="center"><b>BC+ results (BrowseComp-Plus, 100 queries)</b></p>
+<p align="center"><sub>BC+ results (BrowseComp-Plus, 100 queries)</sub></p>
 
 <p align="center">
 <img src="bright_res.png" alt="BRIGHT results" width="600">
 </p>
-<p align="center"><b>BRIGHT results (nDCG@10)</b></p>
+<p align="center"><sub>BRIGHT results (nDCG@10)</sub></p>
 
 ## About this repo
 
