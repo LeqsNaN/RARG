@@ -11,6 +11,11 @@ Official code for the paper **"A New Role for Relevance: Guiding Corpus Interact
 
 **Motivation.** Search agents use relevance in two ways, and both fall short. Top-$k$ retrieval agents rank the corpus and feed the model a fixed set of documents or snippets — this tells the agent *which* documents may matter, but not where the decisive evidence lies, and a single ranked view cannot localize, connect, or verify clues across documents. Direct Corpus Interaction (DCI) instead lets the agent explore raw documents with terminal tools like `grep`, which is far more fine-grained — but it scans blindly, treating every location as equally promising, so useful clues surface late and the agent burns many turns before converging. Our key observation: **relevance should guide the interaction itself, not merely select its inputs.**
 
+<p align="center">
+<img src="method.png" alt="RARG method overview">
+</p>
+<p align="center"><sub>Overview of the RARG method.</sub></p>
+
 **Method.** RARG turns retrieval into an *execution prior* for `grep`-style search, applied at two resolutions:
 
 - **RARG** — Given an agent-issued query, an embedding retriever ranks the corpus, and `rg` then traverses documents *in that relevance order* (via a single-threaded, path-ordered scan). Matches from more relevant documents surface first, turning document-level relevance into search order rather than top-$k$ content selection.
