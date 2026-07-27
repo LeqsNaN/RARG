@@ -2,6 +2,11 @@
 
 Official code for the paper **"A New Role for Relevance: Guiding Corpus Interaction in Agentic Search"**.
 
+<p align="center">
+<img src="cost.png" alt="Accuracy/nDCG@10 versus interaction cost" width="600">
+</p>
+<p align="center"><b>Accuracy/nDCG@10 versus interaction cost (average tool calls) on BrowseComp-Plus and BRIGHT. By turning relevance into an execution prior over rg exploration, RARG advances the accuracy--efficiency frontier over retrieval-based and direct-interaction agents.</b></p>
+
 ## About the paper
 
 **Motivation.** Search agents use relevance in two ways, and both fall short. Top-$k$ retrieval agents rank the corpus and feed the model a fixed set of documents or snippets — this tells the agent *which* documents may matter, but not where the decisive evidence lies, and a single ranked view cannot localize, connect, or verify clues across documents. Direct Corpus Interaction (DCI) instead lets the agent explore raw documents with terminal tools like `grep`, which is far more fine-grained — but it scans blindly, treating every location as equally promising, so useful clues surface late and the agent burns many turns before converging. Our key observation: **relevance should guide the interaction itself, not merely select its inputs.**
@@ -13,10 +18,6 @@ Official code for the paper **"A New Role for Relevance: Guiding Corpus Interact
 - **RARG++** — Additionally *reranks* a wider pool of `rg` matches by combining the global query with the local search intent, letting locally informative excerpts — including those in lower-ranked documents — compete for the model's limited observation budget.
 
 Together, the three levels decide where interaction begins, which documents `rg` visits first, and which local matches reach the model — helping the agent reach evidence earlier and converge with fewer wasted steps, while keeping DCI's fine-grained interaction.
-
-<p align="center">
-<img src="cost.png" alt="BC+ cost" width="600">
-</p>
 
 **Results.** On BrowseComp-Plus (100 queries), RARG++ reaches 84% accuracy vs. 78% for RISE/DCI (GPT-5.4-mini) with far fewer tool calls; on 4 subsets used by DCI in BRIGHT, RARG+ achieves 53.36 avg nDCG@10, surpassing DCI, RISE, and NeMo.
 
