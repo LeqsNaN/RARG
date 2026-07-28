@@ -42,7 +42,7 @@ Together, the three levels decide where interaction begins, which documents `rg`
 
 ## About this repo
 
-RARG is a Python reimplementation of the [pi-mono](https://github.com/earendil-works/pi/tree/main/packages/coding-agent)-style agent used in [DCI-Agent-Lite](https://github.com/DCI-Agent/DCI-Agent-Lite), on top of which we build our own method modifications.
+RARG is a Python reimplementation of the [pi-mono](https://github.com/earendil-works/pi/tree/main/packages/coding-agent)-style agent used in [DCI-Agent-Lite](https://github.com/DCI-Agent/DCI-Agent-Lite), on top of which we build our own method modifications. We mirrored the original TypeScript codebase and reimplemented it in Python, so that the agent logic stays faithful to the DCI-Agent-Lite implementation while our method changes (RARG / RARG+ / RARG++) are built on top.
 
 ## Included components
 
