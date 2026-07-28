@@ -2,6 +2,8 @@
 
 Official code for the paper **"A New Role for Relevance: Guiding Corpus Interaction in Agentic Search"**.
 
+[Paper (arXiv)](https://arxiv.org/abs/2607.24223)
+
 <p align="center">
 <img src="cost.png" alt="Accuracy/nDCG@10 versus interaction cost">
 </p>
@@ -425,3 +427,17 @@ Redundant files have been removed; for each sample we keep only:
 
 We also keep the **scope file(s)**. The `gpt-5.4-nano` runs produced many of
 them, so for those we kept only a single `scope_1.txt`.
+
+## Citation
+
+If you find this work useful, please cite:
+
+```bibtex
+@article{rarg2026,
+  title        = {A New Role for Relevance: Guiding Corpus Interaction in Agentic Search},
+  author       = {Li, Jiangnan},
+  journal      = {arXiv preprint arXiv:2607.24223},
+  year         = {2026},
+  url          = {https://arxiv.org/abs/2607.24223}
+}
+```
