@@ -419,7 +419,7 @@ The following large artifacts are still intentionally omitted from this repo cop
 
 ## Outputs for reference (`outputs_for_demonstration`)
 
-`outputs_for_demonstration/bcplus_eval/` contains example agent run outputs on
+`outputs_for_demonstration/bcplus_eval/` contains agent run outputs on
 BrowseComp-Plus (100-query sample) for a few model/recipe combinations.
 Redundant files have been removed; for each sample we keep only:
 
