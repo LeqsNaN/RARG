@@ -4,6 +4,7 @@ Official code for the paper **"A New Role for Relevance: Guiding Corpus Interact
 
 <p align="center">
 <a href="https://arxiv.org/abs/2607.24223"><img src="https://img.shields.io/badge/arXiv-2607.24223-b31b1b.svg" alt="arXiv"></a>
+<a href="https://qdcassie-li.github.io/RARG/"><img src="https://img.shields.io/badge/Project%20Page-RARG-0a6b6b.svg" alt="Project Page"></a>
 </p>
 
 <p align="center">
