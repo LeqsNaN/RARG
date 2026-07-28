@@ -2,7 +2,9 @@
 
 Official code for the paper **"A New Role for Relevance: Guiding Corpus Interaction in Agentic Search"**.
 
-[![arXiv](https://img.shields.io/badge/arXiv-2607.24223-b31b1b.svg)](https://arxiv.org/abs/2607.24223)
+<p align="center">
+<a href="https://arxiv.org/abs/2607.24223"><img src="https://img.shields.io/badge/arXiv-2607.24223-b31b1b.svg" alt="arXiv"></a>
+</p>
 
 <p align="center">
 <img src="cost.png" alt="Accuracy/nDCG@10 versus interaction cost">
