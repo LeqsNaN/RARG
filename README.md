@@ -430,3 +430,36 @@ Redundant files have been removed; for each sample we keep only:
 
 We also keep the **scope file(s)**. The `gpt-5.4-nano` runs produced many of
 them, so for those we kept only a single `scope_1.txt`.
+
+The directories below are grouped by what they evaluate.
+
+**RARG variants — 100-query subset (`bcplus_qa_sample100.jsonl`), 100K & 1M corpora.**
+These are the three RARG variants run on the 100-query BrowseComp-Plus sample
+(the RISE 100-query evaluation subset), covering both corpus scales. The
+variant ↔ recipe correspondence is **RARG** = `*_no_rerank`, **RARG+** =
+`*_embed_emb_only_*`, **RARG++** = `*_bash_emb20_emb_rg`.
+
+- `chat_gpt-5.4-mini_100k_ts_mirror_agent_sample100_no_rerank` — RARG (GPT-5.4-mini, 100K)
+- `chat_gpt-5.4-mini_100k_ts_mirror_agent_sample100_embed_emb_only_20` — RARG+ (GPT-5.4-mini, 100K)
+- `chat_gpt-5.4-mini_100k_ts_mirror_agent_sample100_bash_emb20_emb_rg` — RARG++ (GPT-5.4-mini, 100K)
+- `chat_gpt-5.4-mini_1m_ts_mirror_agent_sample100_no_rerank` — RARG (GPT-5.4-mini, 1M)
+- `chat_gpt-5.4-mini_1m_ts_mirror_agent_sample100_embed_emb_only_20` — RARG+ (GPT-5.4-mini, 1M)
+- `chat_gpt-5.4-mini_1m_ts_mirror_agent_sample100_bash_emb20_emb_rg` — RARG++ (GPT-5.4-mini, 1M)
+
+Two additional backbones are provided on the same 100-query / 100K setting:
+
+- `chat_gpt-5.4_100k_ts_mirror_agent_sample100_bash_emb20_emb_rg` — RARG++ (GPT-5.4, 100K). Only the `bash_emb20_emb_rg` recipe was run for the full model.
+- `chat_gpt-5.4-nano_100k_ts_mirror_agent_sample100_{no_rerank,embed_emb_only_20,bash_emb20_emb_rg}_high` — RARG / RARG+ / RARG++ (GPT-5.4-nano, 100K, `_high` configuration).
+
+**RISE BM25 baseline — 1M corpus.** `rise_bm25_1m` is the RISE baseline
+(BM25-based grep agent, `runner: rise`) run with GPT-5.4-mini over the 1M
+FineWeb-Edu corpus on the same 100-query subset. Its layout differs from the
+RARG runs: results are aggregated under `_per_query/`, `_summary.json`,
+`_traces/`, and `_working/`, with `judge_summary.json` holding the
+LLM-as-judge evaluation.
+
+**`embedding_agent_100k` — self-sampled 50-query set.** This directory is *not*
+on the same sample as the runs above: it was built from an early, independently
+sampled set of 50 queries (`bcplus_qa_sample50.jsonl`) over the 100K corpus, so
+its query set differs slightly from the 100-query subset used everywhere else.
+It is provided for reference on the embedding-agent recipe only.
