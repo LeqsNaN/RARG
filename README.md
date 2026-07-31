@@ -462,4 +462,6 @@ LLM-as-judge evaluation.
 on the same sample as the runs above: it was built from an early, independently
 sampled set of 50 queries (`bcplus_qa_sample50.jsonl`) over the 100K corpus, so
 its query set differs slightly from the 100-query subset used everywhere else.
-It is provided for reference on the embedding-agent recipe only.
+It is provided for reference on the embedding-agent recipe only. **Note:** Figure 3 in the
+paper is drawn from this set. We are currently adding the nemo agent and the
+embedding agent results on the full 100-query subset.
