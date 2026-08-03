@@ -465,3 +465,11 @@ its query set differs slightly from the 100-query subset used everywhere else.
 It is provided for reference on the embedding-agent recipe only. **Note:** Figure 3 in the
 paper is drawn from this set. We are currently adding the nemo agent and the
 embedding agent results on the full 100-query subset.
+
+**Update:** We have since re-run the embedding agent and replaced the results
+with a new version, so this early self-sampled 50-query run can be discarded.
+The updated results do not change the conclusions drawn in Figure 3 of the paper.
+
+**New agent results — 100-query subset, 100K corpus.**
+- `chat_gpt-5.4-mini_100k_embedding_agent_bcplus_medium` — results of the re-run embedding agent (the update described above) on the BC+ 100-query subset over the 100K corpus.
+- `nemo_bcplus_qa_dci_qwen3emb_gpt-5.4-mini_medium_fixedtop5_rerun_ichat8903_sample100` — results of the nemo agentic recipe adapted to BC+ (Qwen3-Embedding backbone, GPT-5.4-mini, medium reasoning, fixed top-5) on the same 100-query / 100K setting.
