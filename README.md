@@ -102,6 +102,10 @@ RARG is a Python reimplementation of the [pi-mono](https://github.com/earendil-w
 - `pyproject.toml`
 - `LICENSE`
 
+### 8. DR-DCI reproduction
+
+- `scripts/dr-dci/` — a Python re-implementation of the DR-DCI main path (dynamic `pull` + hardlinked view + level-3 context compaction) evaluated on BrowseComp-Plus. It includes the agent loop, three tools (`read`/`bash`/`pull`), OpenAI-compatible and local Qwen3 embedding adapters, and the eval harness with LLM-as-judge. Run instructions are in `scripts/dr-dci/README.md`.
+
 ## Quick start
 
 ```bash
